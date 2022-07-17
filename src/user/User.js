@@ -46,23 +46,18 @@ export const User = () => {
   */
   return (
     <div>
-      {/* <Switch>
-        <Route path={path}>
-          <UserProfile />
-        </Route>
-      </Switch> */}
       <section className="container">
         <PostsNav />
         <div className="border p-4 h-100 d-flex flex-column">
           <h2 className="mb-3">{user.name}</h2>
           <ul className="nav nav-tabs">
             <li className="nav-item">
-              <a href={`/users/${userId}`} className="nav-link">
+              <a href={`${url}`} className="nav-link">
                 Profile
               </a>
             </li>
             <li className="nav-item">
-              <a href={`/users/${userId}/posts`} className="nav-link">
+              <a href={`${url}/posts`} className="nav-link">
                 Posts
               </a>
             </li>
@@ -71,10 +66,10 @@ export const User = () => {
           {user.id ? (
             <div className="p-4 border border-top-0">
               <Switch>
-                <Route path={`/users/${userId}/posts`}>
+                <Route path={`${path}/posts`}>
                   <PostList posts={user.posts} />
                 </Route>
-                <Route exact path={`/users/${userId}`}>
+                <Route exact path={`${path}/`}>
                   <UserProfile user={user} />
                 </Route>
               </Switch>

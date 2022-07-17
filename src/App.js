@@ -33,16 +33,7 @@ function App() {
       </Switch>
     </Fragment>
   );
-  // return (
-  //   <Fragment>
-  //     <Header />
-  //     <Switch>
-  //       <Route exact path="/">
-  //         <CardList />
-  //       </Route>
-  //     </Switch>
-  //   </Fragment>
-  // );
+ 
 }
 
 export default App;

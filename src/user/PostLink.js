@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Switch, useParams, useRouteMatch } from "react-router";
+import { Link } from "react-router-dom";
 import Post from "./Post";
 
 /*
@@ -7,18 +8,13 @@ import Post from "./Post";
 */
 
 export const PostLink = ({ post }) => {
-  const { path } = useRouteMatch();
+  const { url } = useRouteMatch();
   const { postID } = useParams();
   // console.log(path);
   return (
     <div>
-      {/* <Switch>
-        <Route path={`${path}/${postID}`}>
-          <Post posts={post} />
-        </Route>
-      </Switch> */}
       <li className="list-group-item text-truncate">
-        <a href={`${path}/${post.id}`}>{post.title}</a>
+        <Link to={`${url + '/' + post.id}`}>{post.title}</Link>
       </li>
     </div>
   );
